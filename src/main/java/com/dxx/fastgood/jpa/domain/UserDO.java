@@ -1,27 +1,46 @@
-package com.dxx.fastgood.dto;
+package com.dxx.fastgood.jpa.domain;
 
 import java.util.Date;
 
-public class UserDto {
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="fm_user")
+public class UserDO {
 	
+	@Id
+	@GeneratedValue
 	private Long id;
 	
+	@Column(nullable=false,name="type")
 	private Integer type; 
 	
+	@Column(nullable=false,length=128)
 	private String email; 
 	
+	@Column(nullable=false,length=128)
 	private String password; 
 	
+	@Column(nullable=false,length=256)
 	private String name; 
 	
+	@Column(nullable=false,length=256,name="company_name")
 	private String companyName; 
 	
+	@Column(nullable=false,length=32)
 	private String mobile; 
 	
+	@Column(nullable=false,name="regist_date")
 	private Date registDate; 
 	
+	@Column(nullable=false,name="last_login")
 	private Date lastLogin;
 	
+	@Column(nullable=false,name="is_active")
 	private Integer isActive;
 	
 	public void setId(Long id){
@@ -36,10 +55,6 @@ public class UserDto {
 		this.type = type;
 	}
 
-	public Integer getType(){
-		return type;
-	}
-	
 	public String getEmail() {
 		return email;
 	}

@@ -5,12 +5,35 @@
 
 1、用户表 （包括经销商用户与门店用户）
 
+基础用户表：
 表名：fm_user
-字段：id,name,mobile,regist_date,last_login,password,is_active,email,company_name,type(1:经销商，2：门店)
+字段：id,name,mobile,regist_date,last_login,password,is_active,email,company_name,type(1: 经销商，2：门店,3: 厂家)
 
-2、商品表
+用户关系表：
+表名：fm_user_relation
+字段：id,user_id,type,relation_id,relation_type,gmt_create
 
-表名：fm_good
-字段：id,category（类别）,name,brand(品牌),
+2、商品基础信息表
 
-3、
+类型表：表名：fm_good_category 字段：id,name,info,brand_id(所属品牌)
+品牌表：表名：fm_good_brand 字段：id,name,info
+具体商品表：表名：fm_good 字段：id,name,category_id,brand_id,info
+
+3、商品交易统计表
+
+商品现有统计表：
+表名：fm_good_count 
+字段：id,good_id,first_in(datetime),recent_in(datetime),remain(剩余数量),owner
+
+商品历史交易统计表：
+表名：fm_good_history_count
+字段：id,good_id,good_count,out_user_id,in_user_id,gmt_create
+
+4、
+
+二、
+
+
+
+
+
