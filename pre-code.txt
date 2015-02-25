@@ -1,0 +1,16 @@
+-----------------初步设计----------------
+注：fm=fastgoodmanager
+
+一、表的设计
+
+1、用户表 （包括经销商用户与门店用户）
+
+表名：fm_user
+字段：id,name,mobile,regist_date,last_login,password,is_active,email,company_name,type(1:经销商，2：门店)
+
+2、商品表
+
+表名：fm_good
+字段：id,category（类别）,name,brand(品牌),
+
+3、
