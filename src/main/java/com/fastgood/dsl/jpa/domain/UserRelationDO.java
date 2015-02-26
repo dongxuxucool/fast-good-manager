@@ -1,17 +1,34 @@
-package com.dxx.fastgood.dto;
+package com.fastgood.dsl.jpa.domain;
 
 import java.util.Date;
 
-public class UserRelationDto {
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="fm_user_relation")
+public class UserRelationDO {
 	
+	@Id
+	@GeneratedValue
 	private Long id;
 	
+	@Column(nullable=false,name="user_id")
+	private Long userId;
+	
+	@Column(nullable=false,name="type")
 	private Integer type;
 	
+	@Column(nullable=false,name="relation_id")
 	private Long relationId;
 	
+	@Column(nullable=false,name="relation_type")
 	private Integer relationType;
 	
+	@Column(nullable=false,name="gmt_create")
 	private Date gmtCreate;
 	
 	public void setId(Long id){
@@ -20,6 +37,14 @@ public class UserRelationDto {
 	
 	public Long getId(){
 		return id;
+	}
+	
+	public void setUserId(Long userId){
+		this.userId = userId;
+	}
+	
+	public Long getUserId(){
+		return userId;
 	}
 	
 	public void setType(Integer type){

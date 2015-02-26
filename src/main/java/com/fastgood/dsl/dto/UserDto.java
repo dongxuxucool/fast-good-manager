@@ -1,4 +1,4 @@
-package com.dxx.fastgood.dto;
+package com.fastgood.dsl.dto;
 
 import java.util.Date;
 

@@ -1,18 +1,21 @@
-package com.dxx.fastgood.service;
+package com.fastgood.dsl.service;
 
-import com.dxx.fastgood.dto.UserDto;
+import java.util.List;
+
+import com.fastgood.dsl.dto.UserDto;
+import com.fastgood.dsl.dto.UserRelationDto;
 
 public interface UserService {
 	
 	/**
-	 * 新建用户
+	 * 淇濆瓨鐢ㄦ埛
 	 * @param user
 	 * @return
 	 */
-	public long save(String email, String password);
+	public long save(String email, String password, String companyName, Integer type);
 	
 	/**
-	 * 修改密码
+	 * 淇敼瀵嗙爜
 	 * @param email
 	 * @param password
 	 * @return
@@ -20,14 +23,14 @@ public interface UserService {
 	public boolean changePassword(Integer id,String oldPassword,String newPassword);
 	
 	/**
-	 * 验证用户是否存在
+	 * 楠岃瘉閭鏄惁瀛樺湪
 	 * @param email
 	 * @return
 	 */
 	public boolean exists(String email);
 	
 	/**
-	 * 用户登录验证
+	 * 鐧诲綍
 	 * @param email
 	 * @param password
 	 * @return
@@ -35,19 +38,24 @@ public interface UserService {
 	public Long login(String email,String password);
 	
 	/**
-	 * 获取用户对象
+	 * 鏍规嵁閭鑾峰彇鐢ㄦ埛瀵硅薄
 	 * @param email
 	 * @return
 	 */
 	public UserDto selectByEmail(String email);
 		
 	/**
-	 * 根据Id获取用户对象
+	 * 鏍规嵁Id鑾峰彇鐢ㄦ埛瀵硅薄
 	 * @param userId
 	 * @return
 	 */
 	public UserDto selectById(Long userId);
 	
-//	public selectBy
+	/**
+	 * 鑾峰彇鐢ㄦ埛鎵�鏈夊叧鑱旂敤鎴风兢
+	 * @param userId
+	 * @return
+	 */
+	public List<UserRelationDto> selectByUserId(Long userId);
 
 }

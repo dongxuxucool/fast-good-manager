@@ -1,4 +1,4 @@
-package com.dxx.fastgood.jpa.domain;
+package com.fastgood.dsl.jpa.domain;
 
 import java.util.Date;
 

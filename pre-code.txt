@@ -1,37 +1,37 @@
------------------³õ²½Éè¼Æ----------------
-×¢£ºfm=fastgoodmanager
+-----------------åˆæ­¥è®¾è®¡----------------
+æ³¨ï¼šfm=fastgoodmanager
 
-Ò»¡¢±íµÄÉè¼Æ
+ä¸€ã€è¡¨çš„è®¾è®¡
 
-1¡¢ÓÃ»§±í £¨°üÀ¨¾­ÏúÉÌÓÃ»§ÓëÃÅµêÓÃ»§£©
+1ã€ç”¨æˆ·è¡¨ ï¼ˆåŒ…æ‹¬ç»é”€å•†ç”¨æˆ·ä¸é—¨åº—ç”¨æˆ·ï¼‰
 
-»ù´¡ÓÃ»§±í£º
-±íÃû£ºfm_user
-×Ö¶Î£ºid,name,mobile,regist_date,last_login,password,is_active,email,company_name,type(1: ¾­ÏúÉÌ£¬2£ºÃÅµê,3: ³§¼Ò)
+åŸºç¡€ç”¨æˆ·è¡¨ï¼š
+è¡¨åï¼šfm_user
+å­—æ®µï¼šid,name,mobile,regist_date,last_login,password,is_active,email,company_name,type(1: ç»é”€å•†ï¼Œ2ï¼šé—¨åº—,3: å‚å®¶)
 
-ÓÃ»§¹ØÏµ±í£º
-±íÃû£ºfm_user_relation
-×Ö¶Î£ºid,user_id,type,relation_id,relation_type,gmt_create
+ç”¨æˆ·å…³ç³»è¡¨ï¼š
+è¡¨åï¼šfm_user_relation
+å­—æ®µï¼šid,user_id,type,relation_id,relation_type,gmt_create
 
-2¡¢ÉÌÆ·»ù´¡ĞÅÏ¢±í
+2ã€å•†å“åŸºç¡€ä¿¡æ¯è¡¨
 
-ÀàĞÍ±í£º±íÃû£ºfm_good_category ×Ö¶Î£ºid,name,info,brand_id(ËùÊôÆ·ÅÆ)
-Æ·ÅÆ±í£º±íÃû£ºfm_good_brand ×Ö¶Î£ºid,name,info
-¾ßÌåÉÌÆ·±í£º±íÃû£ºfm_good ×Ö¶Î£ºid,name,category_id,brand_id,info
+ç±»å‹è¡¨ï¼šè¡¨åï¼šfm_good_category å­—æ®µï¼šid,name,info,brand_id(æ‰€å±å“ç‰Œ)
+å“ç‰Œè¡¨ï¼šè¡¨åï¼šfm_good_brand å­—æ®µï¼šid,name,info
+å…·ä½“å•†å“è¡¨ï¼šè¡¨åï¼šfm_good å­—æ®µï¼šid,name,category_id,brand_id,info
 
-3¡¢ÉÌÆ·½»Ò×Í³¼Æ±í
+3ã€å•†å“äº¤æ˜“ç»Ÿè®¡è¡¨
 
-ÉÌÆ·ÏÖÓĞÍ³¼Æ±í£º
-±íÃû£ºfm_good_count 
-×Ö¶Î£ºid,good_id,first_in(datetime),recent_in(datetime),remain(Ê£ÓàÊıÁ¿),owner
+å•†å“ç°æœ‰ç»Ÿè®¡è¡¨ï¼š
+è¡¨åï¼šfm_good_count 
+å­—æ®µï¼šid,good_id,first_in(datetime),recent_in(datetime),remain(å‰©ä½™æ•°é‡),owner
 
-ÉÌÆ·ÀúÊ·½»Ò×Í³¼Æ±í£º
-±íÃû£ºfm_good_history_count
-×Ö¶Î£ºid,good_id,good_count,out_user_id,in_user_id,gmt_create
+å•†å“å†å²äº¤æ˜“ç»Ÿè®¡è¡¨ï¼š
+è¡¨åï¼šfm_good_history_count
+å­—æ®µï¼šid,good_id,good_count,out_user_id,in_user_id,gmt_create
 
-4¡¢
+4ã€
 
-¶ş¡¢
+äºŒã€
 
 
 
