@@ -9,6 +9,7 @@ import org.springframework.stereotype.Component;
 import com.fastgood.dsl.dto.UserDto;
 import com.fastgood.dsl.dto.UserRelationDto;
 import com.fastgood.dsl.jpa.dao.UserDAO;
+import com.fastgood.dsl.jpa.dao.UserRelationDAO;
 import com.fastgood.dsl.jpa.domain.UserDO;
 import com.fastgood.dsl.service.UserService;
 
@@ -17,6 +18,9 @@ public class UserServiceImpl implements UserService{
 
 	@Autowired
 	private UserDAO userDAO;
+	
+	@Autowired
+	private UserRelationDAO userRelationDAO;
 	
 	@Override
 	public long save(String email, String password, String companyName, Integer type) {

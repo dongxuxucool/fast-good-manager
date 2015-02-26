@@ -8,17 +8,17 @@
 	</appender>
 
 	<!-- 时间滚动输出 level为 info 日志 -->
-	<appender name="mojing"
+	<appender name="fastgood"
 		class="ch.qos.logback.core.rolling.RollingFileAppender">
 		<filter class="ch.qos.logback.classic.filter.LevelFilter">
 			<evaluator name="myEval_service">
-				<expression>message.contains("com.mj")</expression>
+				<expression>message.contains("com.fastgood")</expression>
 			</evaluator>
 			<onMatch>ACCEPT</onMatch>
 			<onMismatch>DENY</onMismatch>
 		</filter>
 		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-			<FileNamePattern>logs/mojing-dsl.%d{yyyy-MM-dd}.log</FileNamePattern>
+			<FileNamePattern>logs/fastgood-dsl.%d{yyyy-MM-dd}.log</FileNamePattern>
 			<MaxHistory>30</MaxHistory>
 		</rollingPolicy>
 		<encoder>
@@ -28,7 +28,7 @@
 
 	<root level="INFO">
 		<appender-ref ref="STDOUT" />
-		<appender-ref ref="mojing" />
+		<appender-ref ref="fastgood" />
 	</root>
 
 </configuration>  

@@ -1,13 +1,24 @@
 -----------------初步设计----------------
-注：fm=fastgoodmanager
+
+一、业务功能模块
+
+1、登录注册
+
+2、我的经销商（存货状态），我的门店客户（存货状态），我的厂商（暂时不考虑）
+
+3、商品管理：商品进销存功能、商品库存状态、进出货记录
+
+4、
 
 一、表的设计
+
+注：fm=fastgoodmanager
 
 1、用户表 （包括经销商用户与门店用户）
 
 基础用户表：
 表名：fm_user
-字段：id,name,mobile,regist_date,last_login,password,is_active,email,company_name,type(1: 经销商，2：门店,3: 厂家)
+字段：id,name,mobile,regist_date,last_login,password,is_active,email,company_name,type(1: 门店，2：经销商,3: 厂家)
 
 用户关系表：
 表名：fm_user_relation
@@ -26,14 +37,27 @@
 字段：id,good_id,first_in(datetime),recent_in(datetime),remain(剩余数量),owner
 
 商品历史交易统计表：
-表名：fm_good_history_count
-字段：id,good_id,good_count,out_user_id,in_user_id,gmt_create
+表名：fm_good_count_history
+字段：id,good_id,good_num,trade_type,relation_id,gmt_create，owner
 
 4、
 
-二、
+三、接口设计
 
+1、登录
+接口：/login POST
+参数：name & password
+返回：name
 
+2、注册
+接口：/register POST
+参数：name & password & company_name & type
+返回：name
 
+3、退出
+接口：/logout POST
+参数：无
+返回：null
 
+4、
 
