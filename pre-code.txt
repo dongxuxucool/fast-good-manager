@@ -22,7 +22,7 @@
 
 用户关系表：
 表名：fm_user_relation
-字段：id,user_id,type,relation_id,relation_type,gmt_create
+字段：id,user_id,type,relation_id,relation_type,gmt_create,company_name
 
 2、商品基础信息表
 
@@ -44,6 +44,8 @@
 
 三、接口设计
 
+除特殊情况，接口返回均为json格式数据
+
 1、登录
 接口：/login POST
 参数：name & password
@@ -59,5 +61,9 @@
 参数：无
 返回：null
 
-4、
+4、获取所有合作伙伴
+接口：/partner GET
+参数：无
+返回：{id:,userId:,type:,relationId:,relationType:,gmtCreate:,companyName:}
+注：relationType:1: 门店，2：经销商,3: 厂家
 

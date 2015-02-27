@@ -52,10 +52,18 @@ public interface UserService {
 	public UserDto selectById(Long userId);
 	
 	/**
-	 * 获取用户所有关联用户群
+	 * 获取用户所有合作伙伴
 	 * @param userId
 	 * @return
 	 */
 	public List<UserRelationDto> selectByUserId(Long userId);
+	
+	/**
+	 * 按类型（门店、经销商、厂商）获取合作伙伴
+	 * @param userId
+	 * @param relationType
+	 * @return
+	 */
+	public List<UserRelationDto> selectByUserIdAndRelationType(Long userId, Integer relationType);
 
 }

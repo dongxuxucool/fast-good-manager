@@ -31,6 +31,17 @@ public class UserRelationDO {
 	@Column(nullable=false,name="gmt_create")
 	private Date gmtCreate;
 	
+	@Column(nullable=false,name="company_name")
+	private String companyName;
+	
+	public String getCompanyName() {
+		return companyName;
+	}
+
+	public void setCompanyName(String companyName) {
+		this.companyName = companyName;
+	}
+
 	public void setId(Long id){
 		this.id = id;
 	}

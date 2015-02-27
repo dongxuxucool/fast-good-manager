@@ -1,5 +1,6 @@
 package com.fastgood.dsl.service.impl;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -11,7 +12,9 @@ import com.fastgood.dsl.dto.UserRelationDto;
 import com.fastgood.dsl.jpa.dao.UserDAO;
 import com.fastgood.dsl.jpa.dao.UserRelationDAO;
 import com.fastgood.dsl.jpa.domain.UserDO;
+import com.fastgood.dsl.jpa.domain.UserRelationDO;
 import com.fastgood.dsl.service.UserService;
+import com.fastgood.dsl.util.ArrayListUtil;
 
 @Component("UserService")
 public class UserServiceImpl implements UserService{
@@ -72,7 +75,38 @@ public class UserServiceImpl implements UserService{
 
 	@Override
 	public List<UserRelationDto> selectByUserId(Long userId) {
-		return null;
+		List<UserRelationDO> userRelDOs = userRelationDAO.findByUserId(userId);
+		if(ArrayListUtil.isBlank(userRelDOs)) return null;
+		
+		return toUserRelDtos(userRelDOs);
+	}
+	
+	@Override
+	public List<UserRelationDto> selectByUserIdAndRelationType(Long userId,
+			Integer relationType) {
+		List<UserRelationDO> userRelDOs = userRelationDAO.findByUserIdAndRelationType(userId, relationType);
+		if(ArrayListUtil.isBlank(userRelDOs)) return null;
+		
+		return toUserRelDtos(userRelDOs);
 	}
 
+	private UserRelationDto toDto(UserRelationDO userRelationDO){
+		UserRelationDto userRelation = new UserRelationDto();
+		userRelation.setCompanyName(userRelationDO.getCompanyName());
+		userRelation.setGmtCreate(userRelationDO.getGmtCreate());
+		userRelation.setId(userRelationDO.getId());
+		userRelation.setRelationId(userRelationDO.getRelationId());
+		userRelation.setRelationType(userRelationDO.getRelationType());
+		userRelation.setType(userRelationDO.getType());
+		userRelation.setUserId(userRelationDO.getUserId());
+		return userRelation;
+	}
+
+	private List<UserRelationDto> toUserRelDtos(List<UserRelationDO> userRelDOs){
+		List<UserRelationDto> userRels = new ArrayList<UserRelationDto>();
+		for (UserRelationDO userRel : userRelDOs) {
+			userRels.add(toDto(userRel));
+		}
+		return userRels;
+	}
 }
