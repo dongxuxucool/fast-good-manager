@@ -65,5 +65,11 @@ public interface UserService {
 	 * @return
 	 */
 	public List<UserRelationDto> selectByUserIdAndRelationType(Long userId, Integer relationType);
+	
+	/**
+	 * 获取当前登录userId
+	 * @return
+	 */
+	public Long getCurrentUserId();
 
 }

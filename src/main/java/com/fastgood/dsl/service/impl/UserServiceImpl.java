@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -24,6 +26,9 @@ public class UserServiceImpl implements UserService{
 	
 	@Autowired
 	private UserRelationDAO userRelationDAO;
+	
+	@Autowired
+	private HttpSession session;
 	
 	@Override
 	public long save(String email, String password, String companyName, Integer type) {
@@ -108,5 +113,11 @@ public class UserServiceImpl implements UserService{
 			userRels.add(toDto(userRel));
 		}
 		return userRels;
+	}
+
+	@Override
+	public Long getCurrentUserId() {
+		Long userId = (Long)session.getAttribute("user_id");
+		return userId;
 	}
 }

@@ -64,6 +64,29 @@
 4、获取所有合作伙伴
 接口：/partner GET
 参数：无
-返回：{id:,userId:,type:,relationId:,relationType:,gmtCreate:,companyName:}
+返回：[{id:,userId:,type:,relationId:,relationType:,gmtCreate:,companyName:},...]
 注：relationType:1: 门店，2：经销商,3: 厂家
+
+5、获取所有合作门店
+接口：/store GET
+参数：无
+返回：[{id:,userId:,type:,relationId:,relationType:,gmtCreate:,companyName:},...]
+
+6、获取所有合作经销商
+接口：/agent GET
+参数：无
+返回：[{id:,userId:,type:,relationId:,relationType:,gmtCreate:,companyName:},...]
+
+7、获取所有合作厂商
+接口：/factory
+参数：无
+返回：[{id:,userId:,type:,relationId:,relationType:,gmtCreate:,companyName:},...]
+
+8、获取合作伙伴信息
+接口：/{partner_id}
+参数：无
+返回：{id,name:null,mobile,regist_date:null,last_login:null,password:null,is_active,email:null,company_name,type}
+
+
+
 
