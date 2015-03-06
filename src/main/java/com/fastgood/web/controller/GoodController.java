@@ -91,10 +91,10 @@ public class GoodController {
 	@RequestMapping(value="/{good_id}", method=RequestMethod.GET)
 	@ResponseBody
 	public AjaxResult<GoodDto> goodGet(@PathVariable("good_id")Long goodId){
-		GoodDto good = goodService.selectGoodById(goodId);
+		Long userId = userService.getCurrentUserId();
 		AjaxResult<GoodDto> result = new AjaxResult<GoodDto>();
 		result.setSuccess(true);
-		result.setData(good);
+		result.setData(null);
 		return null;
 	}
 	
