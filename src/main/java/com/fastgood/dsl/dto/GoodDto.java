@@ -11,6 +11,10 @@ public class GoodDto {
 	
 	private String info;
 	
+	private String brandName;
+	
+	private String caregoryName;
+	
 	public void setId(Long id){
 		this.id = id;
 	}
@@ -50,4 +54,21 @@ public class GoodDto {
 	public String getInfo(){
 		return info;
 	}
+
+	public String getBrandName() {
+		return brandName;
+	}
+
+	public void setBrandName(String brandName) {
+		this.brandName = brandName;
+	}
+
+	public String getCaregoryName() {
+		return caregoryName;
+	}
+
+	public void setCaregoryName(String caregoryName) {
+		this.caregoryName = caregoryName;
+	}
+	
 }

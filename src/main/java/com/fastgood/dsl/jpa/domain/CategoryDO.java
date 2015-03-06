@@ -18,7 +18,7 @@ public class CategoryDO {
 	private String name;
 	
 	@Column(nullable=false,name="brand_id")
-	private Long brandId;
+	private Integer brandId;
 	
 	@Column(nullable=false,name="info",length=256)
 	private String info;
@@ -39,11 +39,11 @@ public class CategoryDO {
 		return name;
 	}
 	
-	public void setBrandId(Long brandId){
+	public void setBrandId(Integer brandId){
 		this.brandId = brandId;
 	}
 	
-	public Long getBrandId(){
+	public Integer getBrandId(){
 		return brandId;
 	}
 	

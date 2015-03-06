@@ -6,7 +6,7 @@ public class CategoryDto {
 	
 	private String name;
 	
-	private Long brandId;
+	private Integer brandId;
 	
 	private String info;
 	
@@ -26,11 +26,11 @@ public class CategoryDto {
 		return name;
 	}
 	
-	public void setBrandId(Long brandId){
+	public void setBrandId(Integer brandId){
 		this.brandId = brandId;
 	}
 	
-	public Long getBrandId(){
+	public Integer getBrandId(){
 		return brandId;
 	}
 	
