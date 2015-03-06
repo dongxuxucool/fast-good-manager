@@ -9,6 +9,7 @@ import org.springframework.stereotype.Component;
 import com.fastgood.dsl.dto.BrandDto;
 import com.fastgood.dsl.dto.CategoryDto;
 import com.fastgood.dsl.dto.CountDto;
+import com.fastgood.dsl.dto.CountGoodDto;
 import com.fastgood.dsl.dto.CountHistoryDto;
 import com.fastgood.dsl.dto.GoodDto;
 import com.fastgood.dsl.jpa.dao.BrandDAO;
@@ -76,12 +77,28 @@ public class GoodServiceImpl implements GoodService{
 	}
 
 	@Override
-	public List<CountDto> selectByOwner(Long owner) {
-		List<CountDO> countDOs = countDAO.findByOwner(owner);
-		if(ArrayListUtil.isBlank(countDOs)) return null;
-		return toCountDtos(countDOs);
+	public List<CountGoodDto> selectByOwner(Long owner) {	
+		List<CountGoodDto> countGoods = new ArrayList<CountGoodDto>();
+		List<String> countStrs = countDAO.findByOwner(owner);
+		if(ArrayListUtil.isBlank(countStrs)) return null;
+		for (String countStr : countStrs) {
+			countGoods.add(toCountGood(countStr));
+		}
+		return countGoods;
 	}
 
+	private CountGoodDto toCountGood(String results){
+		CountGoodDto countGood = new CountGoodDto();
+		String[] resultSplits = results.split("\\,");
+		countGood.setId(Long.parseLong(resultSplits[0]));
+		countGood.setGoodId(Long.parseLong(resultSplits[1]));
+		countGood.setRemain(Long.parseLong(resultSplits[2]));
+		countGood.setOwner(Long.parseLong(resultSplits[3]));
+		countGood.setName(resultSplits[3]);
+		countGood.setInfo(resultSplits[4]);	
+		return countGood;
+	}
+	
 	@Override
 	public List<CountHistoryDto> selectByGoodIdAndOwner(Long goodId, Long owner) {
 		List<CountHistoryDO> countHistoryDOs = countHistoryDAO.findByGoodIdAndOwner(goodId, owner);

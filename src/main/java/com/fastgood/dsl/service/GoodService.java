@@ -5,6 +5,7 @@ import java.util.List;
 import com.fastgood.dsl.dto.BrandDto;
 import com.fastgood.dsl.dto.CategoryDto;
 import com.fastgood.dsl.dto.CountDto;
+import com.fastgood.dsl.dto.CountGoodDto;
 import com.fastgood.dsl.dto.CountHistoryDto;
 import com.fastgood.dsl.dto.GoodDto;
 
@@ -42,7 +43,7 @@ public interface GoodService {
 	 * @param owner
 	 * @return
 	 */
-	public List<CountDto> selectByOwner(Long owner);
+	public List<CountGoodDto> selectByOwner(Long owner);
 	
 	/**
 	 * 获取用户下某个商品的交易历史记录
