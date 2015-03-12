@@ -33,4 +33,7 @@ GROUP BY
 	
 	@Query("select c.id,c.goodId,c.remain,c.owner,g.name,g.info from CountDO c,GoodDO g WHERE c.goodId =null OR (c.goodId= g.id AND g.id=?1)")
 	public String findByGoodId(Long goodId);
+	
+	@Query("select distinct server_id from mj_user")
+	public Object[] findBrandIds(Long brandId);
 }

@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.fastgood.dsl.dto.BrandDto;
 import com.fastgood.dsl.dto.CountGoodDto;
 import com.fastgood.dsl.dto.GoodDto;
 import com.fastgood.dsl.jpa.dao.CountDAO;
@@ -103,13 +104,23 @@ public class GoodController {
 	 * @param owner
 	 * @return
 	 */
-	@RequestMapping(value="/good/{owner}", method=RequestMethod.GET)
+	@RequestMapping(value="/owner/{owner}", method=RequestMethod.GET)
 	@ResponseBody
 	public AjaxResult<List<CountGoodDto>> goodsGet(@PathVariable("owner")Long owner){
     	List<CountGoodDto> countGoods = goodService.selectByOwner(owner);
 		AjaxResult<List<CountGoodDto>> result = new AjaxResult<List<CountGoodDto>>();
 		result.setSuccess(true);
 		result.setData(countGoods);
+		return result;
+	}
+	
+	@RequestMapping(value="/brand", method=RequestMethod.GET)
+	@ResponseBody
+	public AjaxResult<List<BrandDto>> brandsGet(){
+		List<BrandDto> brands = goodService.selectBrandAll();
+		AjaxResult<List<BrandDto>> result = new AjaxResult<List<BrandDto>>();
+		result.setSuccess(true);
+		result.setData(brands);
 		return result;
 	}
 }
