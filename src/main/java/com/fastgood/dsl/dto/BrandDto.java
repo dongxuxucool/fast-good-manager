@@ -1,5 +1,6 @@
 package com.fastgood.dsl.dto;
 
+//test git
 public class BrandDto {
 	
 	private Integer id;
